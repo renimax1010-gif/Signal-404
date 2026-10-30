@@ -10,13 +10,11 @@ function required(name) {
   return value;
 }
 const token = required('VK_GROUP_TOKEN');
-const aiKey = required('OPENAI_API_KEY');
-const aiModel = required('OPENAI_MODEL');
 const groupId = Number(required('VK_GROUP_ID'));
 if (!Number.isInteger(groupId) || groupId <= 0) throw new Error('VK_GROUP_ID должен быть положительным числом сообщества.');
 
-const randomChance = Math.min(0.1, Math.max(0, Number(process.env.RANDOM_REPLY_CHANCE ?? 0.025)));
-const globalCooldownMs = Math.max(30, Number(process.env.RANDOM_REPLY_COOLDOWN_SECONDS ?? 90)) * 1000;
+const randomChance = Math.min(0.08, Math.max(0, Number(process.env.RANDOM_REPLY_CHANCE ?? 0.035)));
+const globalCooldownMs = Math.max(30, Number(process.env.RANDOM_REPLY_COOLDOWN_SECONDS ?? 120)) * 1000;
 const userCooldownMs = Math.max(60, Number(process.env.USER_COOLDOWN_SECONDS ?? 300)) * 1000;
 const logText = process.env.LOG_MESSAGE_TEXT === 'true';
 const vk = new VK({ token });
@@ -27,7 +25,7 @@ function log(event, details = {}) {
   console.log(JSON.stringify({ time: new Date().toISOString(), event, ...details }));
 }
 function cleanText(value) {
-  return String(value || '').replace(/\s+/g, ' ').trim();
+  return String(value || '').replace(/\\s+/g, ' ').trim();
 }
 
 vk.updates.on('message_new', async (context) => {
@@ -54,8 +52,6 @@ vk.updates.on('message_new', async (context) => {
     }
 
     const answer = await generateReply({
-      apiKey: aiKey,
-      model: aiModel,
       peerId,
       speaker: 'участник ' + senderId,
       message,
@@ -85,7 +81,7 @@ process.once('SIGINT', () => shutdown('SIGINT'));
 process.once('SIGTERM', () => shutdown('SIGTERM'));
 
 (async () => {
-  log('starting', { groupId, aiModel, randomChance, globalCooldownMs, userCooldownMs });
+  log('starting', { groupId, mode: 'local-algorithms', randomChance, globalCooldownMs, userCooldownMs });
   await vk.updates.start();
   log('longpoll_started', { groupId });
 })().catch((error) => {
