@@ -25,7 +25,7 @@ function log(event, details = {}) {
   console.log(JSON.stringify({ time: new Date().toISOString(), event, ...details }));
 }
 function cleanText(value) {
-  return String(value || '').replace(/\\s+/g, ' ').trim();
+  return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
 vk.updates.on('message_new', async (context) => {
