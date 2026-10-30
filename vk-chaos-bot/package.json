@@ -1,1 +1,1 @@
-{"name":"vk-chaos-bot","version":"1.0.0","private":true,"main":"src/index.js","scripts":{"start":"node src/index.js","check":"node --check src/index.js && node --check src/brain.js","test":"node --test"},"engines":{"node":">=20"},"dependencies":{"dotenv":"^16.4.7","vk-io":"^5.3.0"}}
+{"name":"vk-chaos-bot","version":"1.0.0","private":true,"main":"src/index.js","scripts":{"start":"node src/index.js","check":"node --check src/index.js && node --check src/brain.js","test":"node --test"},"engines":{"node":">=20"},"dependencies":{"dotenv":"^16.4.7","vk-io":"^4.10.1"}}
