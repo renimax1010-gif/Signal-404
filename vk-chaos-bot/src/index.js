@@ -36,7 +36,8 @@ vk.updates.on('message_new', async (context) => {
     const peerId = Number(context.peerId);
     if (!senderId || !peerId) return;
 
-    const replyToBot = Number(context.replyMessage?.senderId) === -groupId;\n    const direct = replyToBot || isDirectAddress(message, groupId);
+    const replyToBot = Number(context.replyMessage?.senderId) === -groupId;
+    const direct = replyToBot || isDirectAddress(message, groupId);
     const now = Date.now();
     const lastUserAt = lastRandomAtByUser.get(senderId) || 0;
     const randomReply = !direct &&
