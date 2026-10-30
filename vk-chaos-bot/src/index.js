@@ -1,7 +1,8 @@
 'use strict';
 require('dotenv').config();
 const { VK } = require('vk-io');
-const { isDirectAddress, chooseReply, chooseRandomInterjection } = require('./brain');
+const { isDirectAddress } = require('./brain');
+const { generateReply, remember } = require('./ai');
 
 function required(name) {
   const value = process.env[name];
@@ -9,6 +10,8 @@ function required(name) {
   return value;
 }
 const token = required('VK_GROUP_TOKEN');
+const aiKey = required('OPENAI_API_KEY');
+const aiModel = required('OPENAI_MODEL');
 const groupId = Number(required('VK_GROUP_ID'));
 if (!Number.isInteger(groupId) || groupId <= 0) throw new Error('VK_GROUP_ID должен быть положительным числом сообщества.');
 
@@ -45,11 +48,20 @@ vk.updates.on('message_new', async (context) => {
       now - lastUserAt >= userCooldownMs &&
       Math.random() < randomChance;
 
-    if (!direct && !randomReply) return;
-    await context.send({
-      message: direct ? chooseReply({ direct: true }) : chooseRandomInterjection(),
-      reply_to: context.id
+    if (!direct && !randomReply) {
+      remember(peerId, 'user', 'Участник ' + senderId + ': ' + message);
+      return;
+    }
+
+    const answer = await generateReply({
+      apiKey: aiKey,
+      model: aiModel,
+      peerId,
+      speaker: 'участник ' + senderId,
+      message,
+      mode: direct ? 'DIRECT' : 'RANDOM'
     });
+    await context.send({ message: answer, reply_to: context.id });
 
     if (randomReply) {
       lastRandomAt = now;
@@ -73,7 +85,7 @@ process.once('SIGINT', () => shutdown('SIGINT'));
 process.once('SIGTERM', () => shutdown('SIGTERM'));
 
 (async () => {
-  log('starting', { groupId, randomChance, globalCooldownMs, userCooldownMs });
+  log('starting', { groupId, aiModel, randomChance, globalCooldownMs, userCooldownMs });
   await vk.updates.start();
   log('longpoll_started', { groupId });
 })().catch((error) => {
