@@ -3,176 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#050609">
-<meta name="description" content="СИГНАЛ 404 — интерактивный хоррор-пранк.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="СИГНАЛ 404 — неизвестный сигнал">
-<meta property="og:description" content="Ты уверен, что это просто ошибка?">
-<title>СИГНАЛ 404 // UNKNOWN</title>
+<meta name="theme-color" content="#08090b">
+<meta name="description" content="СИГНАЛ 404 — хоррор-пранк.">
+<title>СИГНАЛ 404 // SECURITY ALERT</title>
 <style>
-:root{color-scheme:dark;--bg:#050609;--red:#ff263d;--muted:#78808b;--line:#252a32;--green:#9cffb0}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:#e9edf2;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-body{overflow-x:hidden;background:radial-gradient(ellipse at 50% 35%,#17151b 0,#090a0f 42%,#030407 100%);min-height:100svh}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.13;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.09) 4px,transparent 5px);mix-blend-mode:screen}
-body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:6;background:radial-gradient(ellipse,transparent 45%,rgba(0,0,0,.66) 100%)}
-button,input{font:inherit}button{cursor:pointer}
-.shell{width:min(100%,620px);min-height:100svh;margin:auto;padding:clamp(18px,5vw,34px) clamp(17px,5vw,32px) 30px;display:flex;flex-direction:column;position:relative;z-index:2}
-.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:13px;color:#8d96a2;font-size:10px;letter-spacing:.18em}
-.live{color:var(--red);display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;background:var(--red);border-radius:50%;box-shadow:0 0 12px var(--red);animation:pulse 1.6s infinite}
-@keyframes pulse{50%{opacity:.25}}
-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:30px 0 24px}
-.brand{font-size:clamp(34px,10vw,58px);font-weight:900;letter-spacing:-.09em;line-height:.95;margin:0 0 12px;text-shadow:0 0 28px #ff263d30}
-.brand span{color:var(--red)}
-.kicker{color:var(--red);font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}
-.lead{color:#aab1bb;font-size:13px;line-height:1.75;max-width:440px}
-.panel{border:1px solid #30343d;background:linear-gradient(145deg,#101218eF,#090b10f2);padding:19px;border-radius:4px;box-shadow:0 18px 60px #0008;margin-top:25px;position:relative;overflow:hidden}
-.panel:before{content:"";position:absolute;top:0;left:0;width:42px;height:2px;background:var(--red);box-shadow:0 0 14px var(--red)}
-.label{font-size:9px;letter-spacing:.2em;color:#858d98;margin-bottom:10px}
-input{width:100%;border:1px solid #363c46;background:#05070b;color:white;padding:15px 13px;outline:none;border-radius:2px;font-size:14px}
-input:focus{border-color:var(--red);box-shadow:0 0 0 2px #ff263d18}
-.action{width:100%;border:1px solid var(--red);background:var(--red);color:#08090c;padding:16px 14px;font-weight:900;letter-spacing:.13em;font-size:11px;margin-top:13px;transition:.2s}
-.action:active{transform:scale(.985)}.action.secondary{background:transparent;color:#e9edf2;border-color:#454b56}
-.fine{color:#747d88;font-size:10px;line-height:1.6;margin-top:14px}
+:root{color-scheme:dark;--red:#ff263d;--green:#20d66b}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#08090b;color:#f4f5f7;font-family:Arial,Helvetica,sans-serif}
+body{min-height:100svh;overflow-x:hidden;background:radial-gradient(ellipse at 50% 35%,#241014 0,#101014 48%,#050609 100%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff2 4px,transparent 5px)}
+.shell{width:min(100%,620px);min-height:100svh;margin:auto;padding:24px 20px 28px;display:flex;flex-direction:column;position:relative}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #343039;padding:8px 0 15px;color:#a0a3aa;font:10px monospace;letter-spacing:.15em}
+.live{color:#ff5263}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:7px;box-shadow:0 0 12px var(--red)}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:38px 0}
+.alert-icon{font-size:64px;text-align:center;margin-bottom:18px;filter:drop-shadow(0 0 18px #f22)}
+h1{font-size:clamp(34px,9vw,54px);line-height:1.02;text-align:center;color:#ff3348;margin:0 0 18px;font-weight:900;letter-spacing:-.06em}
+.subtitle{text-align:center;color:#d4d5d9;font-size:16px;line-height:1.55;margin:0 auto 28px;max-width:470px}
+.warning{border:1px solid #762b35;background:#190e13;padding:18px;margin:0 0 24px;line-height:1.6;font:13px/1.7 monospace;color:#f3b7bd}
+.warning strong{color:#ff5263}
+.safe{display:block;width:100%;border:0;border-radius:8px;background:linear-gradient(#28e879,#13b957);color:#03170b;padding:21px 12px;font-size:clamp(15px,4vw,19px);font-weight:900;letter-spacing:.025em;box-shadow:0 0 28px #20d66b55, inset 0 1px #ffffff70;cursor:pointer;animation:glow 1.8s infinite}
+.safe:active{transform:scale(.98)}
+@keyframes glow{50%{box-shadow:0 0 42px #20d66b99,inset 0 1px #ffffff70}}
+.hint{text-align:center;color:#8e929b;font:11px/1.6 monospace;margin-top:16px}
+.footer{border-top:1px solid #343039;padding-top:13px;display:flex;justify-content:space-between;color:#70747d;font:9px monospace;letter-spacing:.12em}
 .hidden{display:none!important}
-.statusline{display:flex;justify-content:space-between;color:#929aa5;font-size:10px;letter-spacing:.12em;margin-bottom:14px}
-.meter{height:3px;background:#252a32;overflow:hidden;margin:12px 0 19px}.meter i{display:block;height:100%;width:0;background:var(--red);box-shadow:0 0 12px var(--red);transition:width .35s}
-.console{font-size:11px;line-height:1.85;color:#9ca5b0;min-height:180px;max-height:245px;overflow:hidden}
-.console p{margin:0;opacity:0;animation:appear .25s forwards}.console p.warn{color:#ff6675}.console p.good{color:var(--green)}
-@keyframes appear{to{opacity:1}}
-.bigwarn{font-size:clamp(23px,7vw,36px);font-weight:900;letter-spacing:-.05em;line-height:1.1;color:#fff;margin:0 0 12px}
-.bigwarn em{font-style:normal;color:var(--red)}
-.chat{display:flex;flex-direction:column;gap:12px;margin:22px 0}
-.bubble{max-width:88%;padding:13px 14px;border:1px solid #333944;background:#11151c;font-size:12px;line-height:1.65;color:#d4d9df}
-.bubble.system{align-self:flex-start;border-left:2px solid var(--red)}.bubble.user{align-self:flex-end;background:#191116;border-color:#54232d;color:#ffb9c1}
-.choices{display:grid;gap:9px}.choice{padding:14px;border:1px solid #343a45;background:#0b0e14;color:#dfe3e8;text-align:left;font-size:11px;line-height:1.5}.choice:active{border-color:var(--red);background:#1a1015}
-.count{font-size:clamp(58px,18vw,100px);font-weight:900;letter-spacing:-.1em;color:var(--red);text-align:center;text-shadow:0 0 35px #ff263d70;margin:12px 0}
-.jumpscare{position:fixed;inset:0;z-index:20;background:#030304;display:flex;align-items:center;justify-content:center;overflow:hidden;animation:sceneIn .18s ease-out}
-@keyframes sceneIn{from{opacity:0}to{opacity:1}}
-.jumpscare svg{width:min(100vw,650px);height:min(100svh,850px);filter:drop-shadow(0 0 35px #a00018);animation:creep .75s ease-out both}
-@keyframes creep{0%{transform:scale(.35) rotate(-4deg);opacity:.2}65%{transform:scale(1.12) rotate(1deg)}100%{transform:scale(1)}}
-.scareword{position:absolute;bottom:9%;left:0;right:0;text-align:center;color:#fff;font-size:clamp(18px,5vw,28px);letter-spacing:.25em;text-shadow:0 0 15px red}
-.endmark{font-size:clamp(30px,9vw,54px);font-weight:900;letter-spacing:-.07em;color:var(--red);margin:8px 0 15px}
-.footer{border-top:1px solid var(--line);padding-top:13px;display:flex;justify-content:space-between;gap:10px;color:#606975;font-size:9px;letter-spacing:.12em}
-.finale{font-size:12px;line-height:1.8;color:#aab2bd}.disclose{margin-top:20px;padding:13px;border:1px solid #31513b;background:#0b1510;color:#a9e6b6;font-size:10px;line-height:1.7}
-.shake{animation:shake .22s linear 2}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-.glitch{animation:glitch .2s steps(2) 3}@keyframes glitch{0%{transform:translate(0)}25%{transform:translate(3px,-1px);filter:hue-rotate(30deg)}50%{transform:translate(-2px,2px)}75%{transform:translate(1px,1px);filter:contrast(1.7)}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+#panic{text-align:center}
+.panic-title{color:#ff263d;font-size:clamp(28px,8vw,48px);font-weight:1000;line-height:1.1;margin:0 0 16px}
+.panic-copy{color:#e3e3e7;font:14px/1.7 monospace;min-height:52px}
+.count{font:900 clamp(90px,28vw,160px)/1 monospace;color:#ff263d;text-shadow:0 0 35px #ff263d99;margin:28px 0}
+.meter{height:5px;background:#29252b;margin:18px 0;overflow:hidden}.meter i{display:block;height:100%;width:100%;background:#ff263d;transition:width .7s linear}
+.log{font:12px/1.9 monospace;color:#ff8994;min-height:80px}
+#scare{position:fixed;inset:0;z-index:10;background:#020203;display:flex;align-items:center;justify-content:center;overflow:hidden;animation:flash .09s steps(2) infinite}
+@keyframes flash{0%,100%{background:#050000}50%{background:#260006}}
+#scare svg{width:min(100vw,700px);height:min(100svh,900px);filter:drop-shadow(0 0 35px #f00024);animation:slam .55s cubic-bezier(.1,.8,.2,1) both}
+@keyframes slam{0%{transform:scale(.08) rotate(-9deg);opacity:0}70%{transform:scale(1.16) rotate(2deg)}100%{transform:scale(1)}}
+.scare-text{position:absolute;bottom:8%;left:0;right:0;text-align:center;font:900 clamp(24px,7vw,42px) monospace;letter-spacing:.15em;color:white;text-shadow:0 0 15px red}
+#done{text-align:center}
+#done h2{font-size:clamp(34px,10vw,58px);color:#ff3348;margin:0 0 16px}
+.disclose{border:1px solid #31513b;background:#0b1510;color:#b7e8c2;padding:15px;font:12px/1.7 monospace;margin-top:26px}
+.again{margin-top:20px;padding:13px 18px;background:transparent;border:1px solid #777;color:#ddd;border-radius:5px}
+.shake{animation:shake .12s linear 4}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="shell" id="app">
-<header class="top"><span>НЕКЛАССИФИЦИРОВАННЫЙ СИГНАЛ</span><span class="live"><i class="dot"></i> LIVE FEED</span></header>
+<header class="top"><span>СИСТЕМА БЕЗОПАСНОСТИ</span><span class="live"><i class="dot"></i>ТРЕВОГА</span></header>
 <main>
-<section id="intro">
-<div class="kicker">// входящий пакет · 04:04:04</div>
-<h1 class="brand">СИГНАЛ <span>404</span></h1>
-<p class="lead">Ты получил странную ссылку. На первый взгляд — обычная системная проверка. Но сигнал повторяется, даже когда его не должно быть.</p>
-<div class="panel">
-<div class="label">ИДЕНТИФИКАТОР СЕАНСА</div>
-<input id="nickname" maxlength="18" autocomplete="off" placeholder="Введи любое имя или оставь пустым">
-<button class="action" id="start">УСТАНОВИТЬ СОЕДИНЕНИЕ&nbsp; →</button>
-<div class="fine">Наушники рекомендуются. Звук включится только после нажатия. Не закрывай страницу до завершения.</div>
-</div>
+<section id="home">
+<div class="alert-icon">🛡️</div>
+<h1>ОБНАРУЖЕН ВИРУС!</h1>
+<p class="subtitle">Обнаружена подозрительная активность. Устройство может находиться под угрозой.</p>
+<div class="warning"><strong>КРИТИЧЕСКОЕ ПРЕДУПРЕЖДЕНИЕ</strong><br>Рекомендуется немедленно покинуть сайт и вернуться в безопасный режим.</div>
+<button class="safe" id="escape">СРОЧНО ПОКИНУТЬ САЙТ<br>↳ ВЕРНУТЬСЯ В БЕЗОПАСНЫЙ РЕЖИМ</button>
+<p class="hint">Нажмите зелёную кнопку для экстренного выхода</p>
 </section>
-<section id="scan" class="hidden">
-<div class="statusline"><span>ПРОВЕРКА УЗЛА</span><span id="percent">00%</span></div>
+<section id="panic" class="hidden">
+<div class="panic-title">ВЫХОД НЕВОЗМОЖЕН</div>
+<p class="panic-copy" id="panicCopy">Запуск аварийного протокола…</p>
+<div class="count" id="count">10</div>
 <div class="meter"><i id="bar"></i></div>
-<div class="console" id="console"></div>
-<div class="fine" id="scanNote">Инициализация визуальной диагностики…</div>
+<div class="log" id="log">› Проверка системного канала…</div>
 </section>
-<section id="story" class="hidden">
-<div class="kicker">// канал открыт · неизвестный абонент</div>
-<h2 class="bigwarn">КТО-ТО <em>НА ЛИНИИ</em></h2>
-<div class="chat" id="chat"></div>
-<div class="choices" id="choices"></div>
-</section>
-<section id="countdown" class="hidden">
-<div class="kicker">// аварийный протокол</div>
-<h2 class="bigwarn">СИГНАЛ НЕ <em>ОСТАНОВИТЬ</em></h2>
-<p class="lead" id="countText">Потеря синхронизации.</p>
-<div class="count" id="count">07</div>
-<div class="meter"><i id="countbar" style="width:100%"></i></div>
-<p class="fine">НЕ ПЕРЕЗАГРУЖАЙ СТРАНИЦУ</p>
-</section>
-<section id="ending" class="hidden">
-<div class="kicker">// соединение разорвано</div>
-<div class="endmark">ТЫ ВЕРНУЛСЯ.</div>
-<p class="finale">Сеанс завершён. Сигнал больше не отвечает. По крайней мере, этот.</p>
-<div class="disclose"><strong>ЭТО БЫЛ ХОРРОР-ПРАНК.</strong><br>Телефон не взламывали. Никакие файлы, сообщения, контакты, камера или микрофон не открывались. Страница ничего не сканировала и не отправляла. Все «ошибки» и события были частью сценария.</div>
-<button class="action secondary" id="again">ПРОЙТИ ЕЩЁ РАЗ</button>
+<section id="done" class="hidden">
+<h2>ТЫ ПОПАЛСЯ!</h2>
+<p>СИГНАЛ 404 // СЕАНС ЗАВЕРШЁН</p>
+<div class="disclose"><strong>ЭТО БЫЛ ХОРРОР-ПРАНК.</strong><br>Никакого вируса нет. Страница не сканировала устройство, не открывала файлы и не получала доступ к личным данным.</div>
+<button class="again" id="again">Повторить пранк</button>
 </section>
 </main>
-<footer class="footer"><span>SF-404 // BUILD 02</span><span>LOCAL SIMULATION ONLY</span></footer>
+<footer class="footer"><span>SF-404 // BUILD 03</span><span>FICTIONAL ALERT</span></footer>
 </div>
-<div id="scare" class="jumpscare hidden" aria-hidden="true">
-<svg viewBox="0 0 600 800" role="img" aria-label="Стилизованное жуткое лицо в темноте">
+<div id="scare" class="hidden" aria-hidden="true">
+<svg viewBox="0 0 600 800" role="img" aria-label="Жуткое стилизованное лицо">
 <defs>
 <radialGradient id="skin"><stop stop-color="#d7c5b7"/><stop offset=".58" stop-color="#71615d"/><stop offset="1" stop-color="#151116"/></radialGradient>
-<radialGradient id="eye"><stop stop-color="#ff1c2f"/><stop offset=".35" stop-color="#69000c"/><stop offset="1" stop-color="#080609"/></radialGradient>
+<radialGradient id="eye"><stop stop-color="#fff"/><stop offset=".15" stop-color="#ff1c2f"/><stop offset=".5" stop-color="#69000c"/><stop offset="1" stop-color="#080609"/></radialGradient>
 <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="8"/><feDisplacementMap in="SourceGraphic" scale="13"/></filter>
 </defs>
 <rect width="600" height="800" fill="#030304"/>
 <path d="M95 800 Q65 570 112 300 Q145 72 300 40 Q455 72 488 300 Q535 570 505 800Z" fill="url(#skin)" filter="url(#rough)"/>
 <path d="M112 310 Q195 205 275 305 Q210 370 128 350Z" fill="#08070a"/><path d="M325 305 Q405 205 488 310 L472 350 Q390 370 325 305Z" fill="#08070a"/>
-<ellipse cx="204" cy="321" rx="47" ry="28" fill="url(#eye)"/><ellipse cx="399" cy="321" rx="47" ry="28" fill="url(#eye)"/>
-<circle cx="204" cy="321" r="9" fill="#fff"/><circle cx="399" cy="321" r="9" fill="#fff"/>
+<ellipse cx="204" cy="321" rx="49" ry="31" fill="url(#eye)"/><ellipse cx="399" cy="321" rx="49" ry="31" fill="url(#eye)"/>
 <path d="M300 330 L260 485 Q300 510 340 485Z" fill="#30252a"/>
 <path d="M190 575 Q300 510 410 575 Q400 710 300 720 Q200 710 190 575Z" fill="#080609"/>
-<path d="M210 580 L390 580 M220 612 L380 612 M235 646 L365 646" stroke="#d8d0c8" stroke-width="13" stroke-linecap="round"/>
+<path d="M210 580 L390 580 M220 612 L380 612 M235 646 L365 646" stroke="#e4d8d0" stroke-width="13" stroke-linecap="round"/>
 <path d="M100 260 Q160 80 300 100 Q440 80 500 260" fill="none" stroke="#100c12" stroke-width="32"/>
-<path d="M140 760 Q300 700 460 760" stroke="#250b12" stroke-width="24" fill="none"/>
 </svg>
-<div class="scareword">НЕ ОБОРАЧИВАЙСЯ</div>
+<div class="scare-text">ТЫ ПОПАЛСЯ</div>
 </div>
 <script>
 (()=>{
 const $=id=>document.getElementById(id);
-const sections=['intro','scan','story','countdown','ending'];
-let timers=[],audio=null,choiceCount=0,person='ОПЕРАТОР';
-function clearTimers(){timers.forEach(clearTimeout);timers=[]}
+let timers=[],audio=null;
 function later(fn,ms){timers.push(setTimeout(fn,ms))}
-function show(id){sections.forEach(x=>$(x).classList.toggle('hidden',x!==id))}
-function sound(type='low'){
-try{
-if(!audio)audio=new (window.AudioContext||window.webkitAudioContext)();
-if(audio.state==='suspended')audio.resume();
-const now=audio.currentTime,o=audio.createOscillator(),g=audio.createGain();
-o.connect(g);g.connect(audio.destination);
-if(type==='hit'){o.type='sawtooth';o.frequency.setValueAtTime(105,now);o.frequency.exponentialRampToValueAtTime(38,now+.42);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.28,now+.025);g.gain.exponentialRampToValueAtTime(.0001,now+.65);o.start(now);o.stop(now+.68)}
-else if(type==='beep'){o.type='square';o.frequency.setValueAtTime(740,now);g.gain.setValueAtTime(.0001,now);g.gain.linearRampToValueAtTime(.055,now+.01);g.gain.exponentialRampToValueAtTime(.0001,now+.13);o.start(now);o.stop(now+.14)}
-else{o.type='triangle';o.frequency.setValueAtTime(58,now);o.frequency.linearRampToValueAtTime(43,now+1.1);g.gain.setValueAtTime(.0001,now);g.gain.linearRampToValueAtTime(.045,now+.2);g.gain.linearRampToValueAtTime(.0001,now+1.15);o.start(now);o.stop(now+1.2)}
-}catch(e){}
-}
-function addLine(text,cls=''){const p=document.createElement('p');p.textContent='› '+text;if(cls)p.className=cls;$('console').appendChild(p);$('console').scrollTop=$('console').scrollHeight}
-function start(){
-clearTimers();choiceCount=0;person=($('nickname').value.trim().replace(/[<>]/g,'').slice(0,18)||'ГОСТЬ').toUpperCase();
-show('scan');$('console').innerHTML='';$('bar').style.width='0%';$('percent').textContent='00%';sound('low');
-const lines=[
-['Подключение к узлу…',''],['Проверка целостности пакета…',''],['Синхронизация часов: расхождение 04:04','warn'],['Получен ответ от неизвестного адреса','warn'],['Повторный пакет: источник не определён','warn'],['Обнаружен посторонний процесс в сценарии',''],['Попытка закрыть канал… ОТКАЗ','warn'],['ВХОДЯЩЕЕ СООБЩЕНИЕ: «Ты здесь?»','warn']
-];
-lines.forEach((line,i)=>later(()=>{addLine(line[0],line[1]);$('bar').style.width=((i+1)/lines.length*100)+'%';$('percent').textContent=String(Math.round((i+1)/lines.length*100)).padStart(2,'0')+'%';sound(i>3?'beep':'low');if(i===lines.length-1)later(openStory,1100)},650+i*610));
-}
-function bubble(text,who='system'){const d=document.createElement('div');d.className='bubble '+who;d.textContent=text;$('chat').appendChild(d)}
-function openStory(){show('story');$('chat').innerHTML='';bubble('Слышишь меня? Не отвечай вслух. Просто выбери.');choices(['Кто ты?','Что происходит?','Закрыть соединение'],[0,1,2])}
-function choices(labels,ids){$('choices').innerHTML='';labels.forEach((t,i)=>{const b=document.createElement('button');b.className='choice';b.textContent='› '+t;b.onclick=()=>answer(ids[i],t);$('choices').appendChild(b)})}
-function answer(id,label){
-choiceCount++;bubble(label,'user');$('choices').innerHTML='';sound('beep');
-if(choiceCount===1){
-if(id===0){bubble('Я не знаю. Я увидел твоё имя в этом канале.');}
-else if(id===1){bubble('Сигнал идёт не отсюда. Он повторяет то, что уже слышал.');}
-else{bubble('Канал не закрывается. Подожди…');}
-later(()=>{bubble('Подожди. Кто-то только что прошёл за моей спиной.');choices(['Ты меня пугаешь','Здесь никого нет','Продолжай'],[3,4,5])},950);
-}else{
-if(id===3)bubble('Я тоже хотел бы, чтобы это была шутка.');
-else if(id===4)bubble('Тогда почему я вижу силуэт?');
-else bubble('Последнее сообщение. Потом связь оборвётся.');
-later(()=>{bubble('НЕ СМОТРИ НА ЭКРАН.');later(beginCountdown,1250)},1000);
-}
-}
-function beginCountdown(){show('countdown');$('count').textContent='07';$('countbar').style.width='100%';let n=7;$('countText').textContent='Синхронизация потеряна. Неизвестный объект приближается.';const tick=()=>{n--;$('count').textContent=String(n).padStart(2,'0');$('countbar').style.width=(n/7*100)+'%';sound('beep');if(n===3){$('countText').textContent='ОШИБКА: КАНАЛ НЕ ЗАКРЫТ';$('app').classList.add('glitch');later(()=>$('app').classList.remove('glitch'),650)}if(n<=0){later(jump,350)}else later(tick,850)};later(tick,850)}
-function jump(){sound('hit');$('scare').classList.remove('hidden');later(()=>{$('scare').classList.add('hidden');show('ending')},1550)}
-$('start').addEventListener('click',start);
-$('again').addEventListener('click',()=>{clearTimers();$('nickname').value='';show('intro')});
+function clear(){timers.forEach(clearTimeout);timers=[]}
+function show(id){['home','panic','done'].forEach(x=>$(x).classList.toggle('hidden',x!==id))}
+function initAudio(){try{if(!audio)audio=new(window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume()}catch(e){}}
+function beep(freq,duration,gain,type='square'){if(!audio)return;const t=audio.currentTime,o=audio.createOscillator(),g=audio.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(gain,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(g);g.connect(audio.destination);o.start(t);o.stop(t+duration+.02)}
+function scareSound(){if(!audio)return;const t=audio.currentTime;const length=audio.sampleRate*.85;const buffer=audio.createBuffer(1,length,audio.sampleRate);const data=buffer.getChannelData(0);for(let i=0;i<length;i++){const fade=Math.min(1,i/(audio.sampleRate*.025))*Math.max(0,1-i/length);data[i]=(Math.random()*2-1)*fade*.8}const noise=audio.createBufferSource();noise.buffer=buffer;const filter=audio.createBiquadFilter();filter.type='lowpass';filter.frequency.setValueAtTime(4200,t);filter.frequency.exponentialRampToValueAtTime(350,t+.8);const ng=audio.createGain();ng.gain.setValueAtTime(.0001,t);ng.gain.exponentialRampToValueAtTime(.8,t+.02);ng.gain.exponentialRampToValueAtTime(.0001,t+.85);noise.connect(filter);filter.connect(ng);ng.connect(audio.destination);noise.start(t);noise.stop(t+.9);[72,109,217,440].forEach((f,i)=>{const o=audio.createOscillator(),g=audio.createGain();o.type=i%2?'sawtooth':'square';o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(f*1.8,t+.65);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(i===0?.42:.12,t+.025);g.gain.exponentialRampToValueAtTime(.0001,t+.82);o.connect(g);g.connect(audio.destination);o.start(t);o.stop(t+.86)})}
+function start(){clear();initAudio();show('panic');$('count').textContent='10';$('bar').style.width='100%';$('log').textContent='› Инициализация аварийного протокола…';const lines=['› Обнаружено распространение вируса…','› Повреждение системных файлов…','› Попытка изоляции заражённого узла… ОТКАЗ','› КРИТИЧЕСКАЯ ОШИБКА СИСТЕМЫ','› НЕИЗВЕСТНЫЙ ПРОЦЕСС ПОЛУЧИЛ КОНТРОЛЬ'];lines.forEach((line,i)=>later(()=>{$('log').textContent=line;beep(360+i*95,.12,.045);if(i===3){$('app').classList.add('shake');later(()=>$('app').classList.remove('shake'),600)}},900+i*1350));let n=10;function tick(){n--;$('count').textContent=String(n).padStart(2,'0');$('bar').style.width=(n/10*100)+'%';if(n===5)$('panicCopy').textContent='ВИРУС РАСПРОСТРАНЁН. ПОДГОТОВКА К ЗАВЕРШЕНИЮ…';if(n===2)$('panicCopy').textContent='ОШИБКА: НЕВОЗМОЖНО ОСТАНОВИТЬ ПРОЦЕСС';if(n<=0){later(jump,450)}else{beep(620,.1,.05);later(tick,1000)}}later(tick,1000)}
+function jump(){ $('scare').classList.remove('hidden');scareSound();later(()=>{$('scare').classList.add('hidden');show('done')},1800)}
+$('escape').addEventListener('click',start);
+$('again').addEventListener('click',()=>{clear();$('panicCopy').textContent='Запуск аварийного протокола…';$('log').textContent='› Проверка системного канала…';$('scare').classList.add('hidden');show('home')});
 })();
 </script>
 </body>
