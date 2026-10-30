@@ -3,111 +3,177 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#08090d">
+<meta name="theme-color" content="#050609">
+<meta name="description" content="СИГНАЛ 404 — интерактивный хоррор-пранк.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="СИГНАЛ 404 — неизвестный процесс">
-<meta property="og:description" content="Система обнаружила странную активность. Осмелишься проверить?">
-<meta property="og:image" content="https://dummyimage.com/1200x630/08090d/ff3030.png&text=SIGNAL+404">
-<title>СИГНАЛ 404</title>
+<meta property="og:title" content="СИГНАЛ 404 — неизвестный сигнал">
+<meta property="og:description" content="Ты уверен, что это просто ошибка?">
+<title>СИГНАЛ 404 // UNKNOWN</title>
 <style>
-:root{color-scheme:dark;--red:#ff334d;--muted:#89909d;--green:#7bffbd}
-*{box-sizing:border-box}
-body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 50% 15%,#1b1018 0,#090a10 48%,#050609 100%);color:#f2f2f4;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff 4px,transparent 5px);mix-blend-mode:overlay}
-.wrap{width:min(720px,100%);margin:auto;padding:24px 18px 44px;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
-.top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font:700 11px ui-monospace,monospace;letter-spacing:.18em;margin-bottom:26px}
-.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:8px;box-shadow:0 0 12px var(--red);animation:pulse 1.4s infinite}
-.panel{border:1px solid #34303a;background:linear-gradient(145deg,#111219ed,#0a0b10f2);padding:clamp(22px,6vw,42px);box-shadow:0 25px 90px #0009;position:relative;overflow:hidden}
-.panel:after{content:"";position:absolute;inset:0;border:1px solid #ff334d22;pointer-events:none}
-.kicker{color:var(--red);font:700 12px ui-monospace,monospace;letter-spacing:.2em}
-h1{font-size:clamp(42px,11vw,76px);line-height:.95;letter-spacing:-.065em;margin:16px 0 18px;text-shadow:3px 0 #ff334d55,-3px 0 #42d8ff33}
-h2{font-size:clamp(25px,6vw,38px);line-height:1.08;margin:10px 0 16px}
-p{color:#b9bbc5}
-.mono{font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;color:#9ba2ad}
-.warning{border-left:2px solid var(--red);padding:10px 13px;background:#ff334d0d;color:#c9c4ca;font-size:13px;margin:22px 0}
-label{display:block;font-size:12px;color:#aeb2bd;margin:22px 0 7px}
-input{width:100%;border:1px solid #44414a;background:#08090e;color:#fff;padding:15px 14px;font:inherit;outline:none;border-radius:2px}
-input:focus{border-color:var(--red);box-shadow:0 0 0 3px #ff334d20}
-button{border:0;background:var(--red);color:#fff;padding:15px 20px;font:800 13px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;width:100%;margin-top:14px;box-shadow:0 8px 28px #ff334d22}
-button:active{transform:translateY(1px)}
-button.secondary{background:#20212a;color:#d7d8df;box-shadow:none;border:1px solid #3c3d47}
-.hidden{display:none!important}
-.progress{height:5px;background:#252630;margin:20px 0 14px;overflow:hidden}
-.bar{height:100%;width:0;background:linear-gradient(90deg,#ff334d,#ff9a67);transition:width .2s}
-.log{height:190px;overflow:hidden;border:1px solid #292a33;background:#07080c;padding:13px;margin-top:18px}
-.log div{font:12px/1.8 ui-monospace,monospace;color:#8e9aa5}
-.log .hot{color:#ff6676}
-.result{font-size:clamp(27px,7vw,42px);font-weight:900;line-height:1.05;margin:20px 0;color:#fff}
-.stamp{display:inline-block;border:1px solid #ff334d;color:#ff6577;padding:5px 9px;font:700 10px ui-monospace,monospace;letter-spacing:.15em;transform:rotate(-2deg)}
-footer{text-align:center;color:#5d626d;font:10px ui-monospace,monospace;letter-spacing:.12em;margin-top:24px}
-.glitch{animation:glitch .18s steps(2) 3}
+:root{color-scheme:dark;--bg:#050609;--red:#ff263d;--muted:#78808b;--line:#252a32;--green:#9cffb0}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:#e9edf2;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+body{overflow-x:hidden;background:radial-gradient(ellipse at 50% 35%,#17151b 0,#090a0f 42%,#030407 100%);min-height:100svh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.13;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.09) 4px,transparent 5px);mix-blend-mode:screen}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:6;background:radial-gradient(ellipse,transparent 45%,rgba(0,0,0,.66) 100%)}
+button,input{font:inherit}button{cursor:pointer}
+.shell{width:min(100%,620px);min-height:100svh;margin:auto;padding:clamp(18px,5vw,34px) clamp(17px,5vw,32px) 30px;display:flex;flex-direction:column;position:relative;z-index:2}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:13px;color:#8d96a2;font-size:10px;letter-spacing:.18em}
+.live{color:var(--red);display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;background:var(--red);border-radius:50%;box-shadow:0 0 12px var(--red);animation:pulse 1.6s infinite}
 @keyframes pulse{50%{opacity:.25}}
-@keyframes glitch{0%{transform:translate(0)}25%{transform:translate(3px,-1px)}50%{transform:translate(-2px,1px)}75%{transform:translate(1px,2px)}100%{transform:translate(0)}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:30px 0 24px}
+.brand{font-size:clamp(34px,10vw,58px);font-weight:900;letter-spacing:-.09em;line-height:.95;margin:0 0 12px;text-shadow:0 0 28px #ff263d30}
+.brand span{color:var(--red)}
+.kicker{color:var(--red);font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}
+.lead{color:#aab1bb;font-size:13px;line-height:1.75;max-width:440px}
+.panel{border:1px solid #30343d;background:linear-gradient(145deg,#101218eF,#090b10f2);padding:19px;border-radius:4px;box-shadow:0 18px 60px #0008;margin-top:25px;position:relative;overflow:hidden}
+.panel:before{content:"";position:absolute;top:0;left:0;width:42px;height:2px;background:var(--red);box-shadow:0 0 14px var(--red)}
+.label{font-size:9px;letter-spacing:.2em;color:#858d98;margin-bottom:10px}
+input{width:100%;border:1px solid #363c46;background:#05070b;color:white;padding:15px 13px;outline:none;border-radius:2px;font-size:14px}
+input:focus{border-color:var(--red);box-shadow:0 0 0 2px #ff263d18}
+.action{width:100%;border:1px solid var(--red);background:var(--red);color:#08090c;padding:16px 14px;font-weight:900;letter-spacing:.13em;font-size:11px;margin-top:13px;transition:.2s}
+.action:active{transform:scale(.985)}.action.secondary{background:transparent;color:#e9edf2;border-color:#454b56}
+.fine{color:#747d88;font-size:10px;line-height:1.6;margin-top:14px}
+.hidden{display:none!important}
+.statusline{display:flex;justify-content:space-between;color:#929aa5;font-size:10px;letter-spacing:.12em;margin-bottom:14px}
+.meter{height:3px;background:#252a32;overflow:hidden;margin:12px 0 19px}.meter i{display:block;height:100%;width:0;background:var(--red);box-shadow:0 0 12px var(--red);transition:width .35s}
+.console{font-size:11px;line-height:1.85;color:#9ca5b0;min-height:180px;max-height:245px;overflow:hidden}
+.console p{margin:0;opacity:0;animation:appear .25s forwards}.console p.warn{color:#ff6675}.console p.good{color:var(--green)}
+@keyframes appear{to{opacity:1}}
+.bigwarn{font-size:clamp(23px,7vw,36px);font-weight:900;letter-spacing:-.05em;line-height:1.1;color:#fff;margin:0 0 12px}
+.bigwarn em{font-style:normal;color:var(--red)}
+.chat{display:flex;flex-direction:column;gap:12px;margin:22px 0}
+.bubble{max-width:88%;padding:13px 14px;border:1px solid #333944;background:#11151c;font-size:12px;line-height:1.65;color:#d4d9df}
+.bubble.system{align-self:flex-start;border-left:2px solid var(--red)}.bubble.user{align-self:flex-end;background:#191116;border-color:#54232d;color:#ffb9c1}
+.choices{display:grid;gap:9px}.choice{padding:14px;border:1px solid #343a45;background:#0b0e14;color:#dfe3e8;text-align:left;font-size:11px;line-height:1.5}.choice:active{border-color:var(--red);background:#1a1015}
+.count{font-size:clamp(58px,18vw,100px);font-weight:900;letter-spacing:-.1em;color:var(--red);text-align:center;text-shadow:0 0 35px #ff263d70;margin:12px 0}
+.jumpscare{position:fixed;inset:0;z-index:20;background:#030304;display:flex;align-items:center;justify-content:center;overflow:hidden;animation:sceneIn .18s ease-out}
+@keyframes sceneIn{from{opacity:0}to{opacity:1}}
+.jumpscare svg{width:min(100vw,650px);height:min(100svh,850px);filter:drop-shadow(0 0 35px #a00018);animation:creep .75s ease-out both}
+@keyframes creep{0%{transform:scale(.35) rotate(-4deg);opacity:.2}65%{transform:scale(1.12) rotate(1deg)}100%{transform:scale(1)}}
+.scareword{position:absolute;bottom:9%;left:0;right:0;text-align:center;color:#fff;font-size:clamp(18px,5vw,28px);letter-spacing:.25em;text-shadow:0 0 15px red}
+.endmark{font-size:clamp(30px,9vw,54px);font-weight:900;letter-spacing:-.07em;color:var(--red);margin:8px 0 15px}
+.footer{border-top:1px solid var(--line);padding-top:13px;display:flex;justify-content:space-between;gap:10px;color:#606975;font-size:9px;letter-spacing:.12em}
+.finale{font-size:12px;line-height:1.8;color:#aab2bd}.disclose{margin-top:20px;padding:13px;border:1px solid #31513b;background:#0b1510;color:#a9e6b6;font-size:10px;line-height:1.7}
+.shake{animation:shake .22s linear 2}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.glitch{animation:glitch .2s steps(2) 3}@keyframes glitch{0%{transform:translate(0)}25%{transform:translate(3px,-1px);filter:hue-rotate(30deg)}50%{transform:translate(-2px,2px)}75%{transform:translate(1px,1px);filter:contrast(1.7)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<main class="wrap">
- <div class="top"><span><i class="dot"></i>UNKNOWN PROCESS</span><span>BUILD 04.04 // RU</span></div>
- <section class="panel" id="intro">
-  <div class="kicker">ВХОДЯЩИЙ СИГНАЛ / 00:00:01</div>
-  <h1>СИГНАЛ<br>404</h1>
-  <p>На этом устройстве обнаружен неизвестный процесс. Источник сигнала не определён.</p>
-  <div class="warning">Необычная активность. Проверка добровольная. Никаких данных из вашей переписки сайт не получает.</div>
-  <label for="nickname">КАК К ТЕБЕ ОБРАЩАТЬСЯ?</label>
-  <input id="nickname" maxlength="20" autocomplete="off" placeholder="Введи имя или ник">
-  <button id="start">ЗАПУСТИТЬ ПРОВЕРКУ</button>
- </section>
- <section class="panel hidden" id="scan" aria-live="polite">
-  <div class="kicker">ИДЁТ ДИАГНОСТИКА</div><h2 id="scanTitle">Проверка сигнала</h2>
-  <div class="mono" id="percent">0%</div><div class="progress"><div class="bar" id="bar"></div></div>
-  <div class="log" id="log"></div>
-  <button class="secondary hidden" id="skip">ПРОДОЛЖИТЬ</button>
- </section>
- <section class="panel hidden" id="result">
-  <div class="stamp">ОТЧЁТ СФОРМИРОВАН</div>
-  <div class="kicker" style="margin-top:22px">ОБЪЕКТ: <span id="who"></span></div>
-  <div class="result" id="rank"></div>
-  <p id="desc"></p>
-  <div class="warning" id="reveal">Спокойно. Это шуточный хоррор-квест. Сайт не сканировал телефон, не видел участников беседы и ничего никуда не отправлял.</div>
-  <button id="share">ОТПРАВИТЬ РЕЗУЛЬТАТ В VK</button>
-  <button class="secondary" id="again">ПРОВЕРИТЬ ЕЩЁ РАЗ</button>
- </section>
- <footer>NO CAMERA · NO MICROPHONE · NO CHAT ACCESS<br>FICTIONAL HORROR EXPERIENCE</footer>
+<div class="shell" id="app">
+<header class="top"><span>НЕКЛАССИФИЦИРОВАННЫЙ СИГНАЛ</span><span class="live"><i class="dot"></i> LIVE FEED</span></header>
+<main>
+<section id="intro">
+<div class="kicker">// входящий пакет · 04:04:04</div>
+<h1 class="brand">СИГНАЛ <span>404</span></h1>
+<p class="lead">Ты получил странную ссылку. На первый взгляд — обычная системная проверка. Но сигнал повторяется, даже когда его не должно быть.</p>
+<div class="panel">
+<div class="label">ИДЕНТИФИКАТОР СЕАНСА</div>
+<input id="nickname" maxlength="18" autocomplete="off" placeholder="Введи любое имя или оставь пустым">
+<button class="action" id="start">УСТАНОВИТЬ СОЕДИНЕНИЕ&nbsp; →</button>
+<div class="fine">Наушники рекомендуются. Звук включится только после нажатия. Не закрывай страницу до завершения.</div>
+</div>
+</section>
+<section id="scan" class="hidden">
+<div class="statusline"><span>ПРОВЕРКА УЗЛА</span><span id="percent">00%</span></div>
+<div class="meter"><i id="bar"></i></div>
+<div class="console" id="console"></div>
+<div class="fine" id="scanNote">Инициализация визуальной диагностики…</div>
+</section>
+<section id="story" class="hidden">
+<div class="kicker">// канал открыт · неизвестный абонент</div>
+<h2 class="bigwarn">КТО-ТО <em>НА ЛИНИИ</em></h2>
+<div class="chat" id="chat"></div>
+<div class="choices" id="choices"></div>
+</section>
+<section id="countdown" class="hidden">
+<div class="kicker">// аварийный протокол</div>
+<h2 class="bigwarn">СИГНАЛ НЕ <em>ОСТАНОВИТЬ</em></h2>
+<p class="lead" id="countText">Потеря синхронизации.</p>
+<div class="count" id="count">07</div>
+<div class="meter"><i id="countbar" style="width:100%"></i></div>
+<p class="fine">НЕ ПЕРЕЗАГРУЖАЙ СТРАНИЦУ</p>
+</section>
+<section id="ending" class="hidden">
+<div class="kicker">// соединение разорвано</div>
+<div class="endmark">ТЫ ВЕРНУЛСЯ.</div>
+<p class="finale">Сеанс завершён. Сигнал больше не отвечает. По крайней мере, этот.</p>
+<div class="disclose"><strong>ЭТО БЫЛ ХОРРОР-ПРАНК.</strong><br>Телефон не взламывали. Никакие файлы, сообщения, контакты, камера или микрофон не открывались. Страница ничего не сканировала и не отправляла. Все «ошибки» и события были частью сценария.</div>
+<button class="action secondary" id="again">ПРОЙТИ ЕЩЁ РАЗ</button>
+</section>
 </main>
+<footer class="footer"><span>SF-404 // BUILD 02</span><span>LOCAL SIMULATION ONLY</span></footer>
+</div>
+<div id="scare" class="jumpscare hidden" aria-hidden="true">
+<svg viewBox="0 0 600 800" role="img" aria-label="Стилизованное жуткое лицо в темноте">
+<defs>
+<radialGradient id="skin"><stop stop-color="#d7c5b7"/><stop offset=".58" stop-color="#71615d"/><stop offset="1" stop-color="#151116"/></radialGradient>
+<radialGradient id="eye"><stop stop-color="#ff1c2f"/><stop offset=".35" stop-color="#69000c"/><stop offset="1" stop-color="#080609"/></radialGradient>
+<filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="8"/><feDisplacementMap in="SourceGraphic" scale="13"/></filter>
+</defs>
+<rect width="600" height="800" fill="#030304"/>
+<path d="M95 800 Q65 570 112 300 Q145 72 300 40 Q455 72 488 300 Q535 570 505 800Z" fill="url(#skin)" filter="url(#rough)"/>
+<path d="M112 310 Q195 205 275 305 Q210 370 128 350Z" fill="#08070a"/><path d="M325 305 Q405 205 488 310 L472 350 Q390 370 325 305Z" fill="#08070a"/>
+<ellipse cx="204" cy="321" rx="47" ry="28" fill="url(#eye)"/><ellipse cx="399" cy="321" rx="47" ry="28" fill="url(#eye)"/>
+<circle cx="204" cy="321" r="9" fill="#fff"/><circle cx="399" cy="321" r="9" fill="#fff"/>
+<path d="M300 330 L260 485 Q300 510 340 485Z" fill="#30252a"/>
+<path d="M190 575 Q300 510 410 575 Q400 710 300 720 Q200 710 190 575Z" fill="#080609"/>
+<path d="M210 580 L390 580 M220 612 L380 612 M235 646 L365 646" stroke="#d8d0c8" stroke-width="13" stroke-linecap="round"/>
+<path d="M100 260 Q160 80 300 100 Q440 80 500 260" fill="none" stroke="#100c12" stroke-width="32"/>
+<path d="M140 760 Q300 700 460 760" stroke="#250b12" stroke-width="24" fill="none"/>
+</svg>
+<div class="scareword">НЕ ОБОРАЧИВАЙСЯ</div>
+</div>
 <script>
+(()=>{
 const $=id=>document.getElementById(id);
+const sections=['intro','scan','story','countdown','ending'];
+let timers=[],audio=null,choiceCount=0,person='ОПЕРАТОР';
+function clearTimers(){timers.forEach(clearTimeout);timers=[]}
+function later(fn,ms){timers.push(setTimeout(fn,ms))}
+function show(id){sections.forEach(x=>$(x).classList.toggle('hidden',x!==id))}
+function sound(type='low'){
+try{
+if(!audio)audio=new (window.AudioContext||window.webkitAudioContext)();
+if(audio.state==='suspended')audio.resume();
+const now=audio.currentTime,o=audio.createOscillator(),g=audio.createGain();
+o.connect(g);g.connect(audio.destination);
+if(type==='hit'){o.type='sawtooth';o.frequency.setValueAtTime(105,now);o.frequency.exponentialRampToValueAtTime(38,now+.42);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.28,now+.025);g.gain.exponentialRampToValueAtTime(.0001,now+.65);o.start(now);o.stop(now+.68)}
+else if(type==='beep'){o.type='square';o.frequency.setValueAtTime(740,now);g.gain.setValueAtTime(.0001,now);g.gain.linearRampToValueAtTime(.055,now+.01);g.gain.exponentialRampToValueAtTime(.0001,now+.13);o.start(now);o.stop(now+.14)}
+else{o.type='triangle';o.frequency.setValueAtTime(58,now);o.frequency.linearRampToValueAtTime(43,now+1.1);g.gain.setValueAtTime(.0001,now);g.gain.linearRampToValueAtTime(.045,now+.2);g.gain.linearRampToValueAtTime(.0001,now+1.15);o.start(now);o.stop(now+1.2)}
+}catch(e){}
+}
+function addLine(text,cls=''){const p=document.createElement('p');p.textContent='› '+text;if(cls)p.className=cls;$('console').appendChild(p);$('console').scrollTop=$('console').scrollHeight}
+function start(){
+clearTimers();choiceCount=0;person=($('nickname').value.trim().replace(/[<>]/g,'').slice(0,18)||'ГОСТЬ').toUpperCase();
+show('scan');$('console').innerHTML='';$('bar').style.width='0%';$('percent').textContent='00%';sound('low');
 const lines=[
- 'Подключение к неизвестному узлу…',
- 'Проверка уровня паранойи…',
- 'Поиск здравого смысла…',
- 'Обнаружена подозрительная любовь к мемам.',
- 'Сканирование чувства юмора…',
- 'Попытка установить контакт…',
- 'Кто-то здесь явно не спит вовремя.',
- 'Сопоставление с архивом странных решений…',
- 'Почти готово. Не оборачивайся.'
+['Подключение к узлу…',''],['Проверка целостности пакета…',''],['Синхронизация часов: расхождение 04:04','warn'],['Получен ответ от неизвестного адреса','warn'],['Повторный пакет: источник не определён','warn'],['Обнаружен посторонний процесс в сценарии',''],['Попытка закрыть канал… ОТКАЗ','warn'],['ВХОДЯЩЕЕ СООБЩЕНИЕ: «Ты здесь?»','warn']
 ];
-const profiles=[
- ['ХРАНИТЕЛЬ ХАОСА','Умеет появляться в чате ровно тогда, когда начинается самое интересное. Система рекомендует не давать ему админку.'],
- ['АГЕНТ НОЧНОГО ОНЛАЙНА','Последний, кто уходит из беседы. Первый, кто пишет «вы спите?».'],
- ['МАСТЕР НЕПРОЧИТАННЫХ','Видит сообщения. Запоминает. Отвечает через три рабочих дня.'],
- ['ГЕНЕРАТОР ТРЕВОЖНЫХ МЕМОВ','Даже в полной тишине способен прислать картинку, после которой никто не уснёт.'],
- ['НЕИЗВЕСТНЫЙ ЭЛЕМЕНТ','Алгоритм не смог определить уровень хаоса. И, честно говоря, не захотел продолжать.']
-];
-let nickname='Гость';
-function show(id){['intro','scan','result'].forEach(x=>$(x).classList.toggle('hidden',x!==id))}
-function addLine(t,hot=false){const d=document.createElement('div');d.textContent='> '+t;if(hot)d.className='hot';$('log').append(d);$('log').scrollTop=$('log').scrollHeight}
-$('start').addEventListener('click',()=>{
- nickname=$('nickname').value.trim().slice(0,20)||'Гость';$('who').textContent=nickname.toUpperCase();$('log').textContent='';$('bar').style.width='0%';$('percent').textContent='0%';show('scan');
- let i=0;const timer=setInterval(()=>{if(i>=lines.length){clearInterval(timer);setTimeout(finish,650);return}addLine(lines[i],i===4||i===8);const p=Math.round((i+1)/lines.length*100);$('bar').style.width=p+'%';$('percent').textContent=p+'%';if(i===6){$('scan').classList.add('glitch');setTimeout(()=>$('scan').classList.remove('glitch'),600)}i++},720);
-});
-function finish(){const p=profiles[Math.floor(Math.random()*profiles.length)];$('rank').textContent=p[0];$('desc').textContent=p[1];show('result');}
-$('again').addEventListener('click',()=>show('intro'));
-$('share').addEventListener('click',()=>{
- const msg='СИГНАЛ 404 определил мой тип: '+$('rank').textContent+'. Проверь себя 👁';
- const url='https://vk.com/share.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('СИГНАЛ 404')+'&comment='+encodeURIComponent(msg);
- window.open(url,'_blank','noopener');
-});
+lines.forEach((line,i)=>later(()=>{addLine(line[0],line[1]);$('bar').style.width=((i+1)/lines.length*100)+'%';$('percent').textContent=String(Math.round((i+1)/lines.length*100)).padStart(2,'0')+'%';sound(i>3?'beep':'low');if(i===lines.length-1)later(openStory,1100)},650+i*610));
+}
+function bubble(text,who='system'){const d=document.createElement('div');d.className='bubble '+who;d.textContent=text;$('chat').appendChild(d)}
+function openStory(){show('story');$('chat').innerHTML='';bubble('Слышишь меня? Не отвечай вслух. Просто выбери.');choices(['Кто ты?','Что происходит?','Закрыть соединение'],[0,1,2])}
+function choices(labels,ids){$('choices').innerHTML='';labels.forEach((t,i)=>{const b=document.createElement('button');b.className='choice';b.textContent='› '+t;b.onclick=()=>answer(ids[i],t);$('choices').appendChild(b)})}
+function answer(id,label){
+choiceCount++;bubble(label,'user');$('choices').innerHTML='';sound('beep');
+if(choiceCount===1){
+if(id===0){bubble('Я не знаю. Я увидел твоё имя в этом канале.');}
+else if(id===1){bubble('Сигнал идёт не отсюда. Он повторяет то, что уже слышал.');}
+else{bubble('Канал не закрывается. Подожди…');}
+later(()=>{bubble('Подожди. Кто-то только что прошёл за моей спиной.');choices(['Ты меня пугаешь','Здесь никого нет','Продолжай'],[3,4,5])},950);
+}else{
+if(id===3)bubble('Я тоже хотел бы, чтобы это была шутка.');
+else if(id===4)bubble('Тогда почему я вижу силуэт?');
+else bubble('Последнее сообщение. Потом связь оборвётся.');
+later(()=>{bubble('НЕ СМОТРИ НА ЭКРАН.');later(beginCountdown,1250)},1000);
+}
+}
+function beginCountdown(){show('countdown');$('count').textContent='07';$('countbar').style.width='100%';let n=7;$('countText').textContent='Синхронизация потеряна. Неизвестный объект приближается.';const tick=()=>{n--;$('count').textContent=String(n).padStart(2,'0');$('countbar').style.width=(n/7*100)+'%';sound('beep');if(n===3){$('countText').textContent='ОШИБКА: КАНАЛ НЕ ЗАКРЫТ';$('app').classList.add('glitch');later(()=>$('app').classList.remove('glitch'),650)}if(n<=0){later(jump,350)}else later(tick,850)};later(tick,850)}
+function jump(){sound('hit');$('scare').classList.remove('hidden');later(()=>{$('scare').classList.add('hidden');show('ending')},1550)}
+$('start').addEventListener('click',start);
+$('again').addEventListener('click',()=>{clearTimers();$('nickname').value='';show('intro')});
+})();
 </script>
-</body></html>
+</body>
+</html>
