@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08090d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="СИГНАЛ 404 — неизвестный процесс">
+<meta property="og:description" content="Система обнаружила странную активность. Осмелишься проверить?">
+<meta property="og:image" content="https://dummyimage.com/1200x630/08090d/ff3030.png&text=SIGNAL+404">
+<title>СИГНАЛ 404</title>
+<style>
+:root{color-scheme:dark;--red:#ff334d;--muted:#89909d;--green:#7bffbd}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 50% 15%,#1b1018 0,#090a10 48%,#050609 100%);color:#f2f2f4;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff 4px,transparent 5px);mix-blend-mode:overlay}
+.wrap{width:min(720px,100%);margin:auto;padding:24px 18px 44px;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font:700 11px ui-monospace,monospace;letter-spacing:.18em;margin-bottom:26px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:8px;box-shadow:0 0 12px var(--red);animation:pulse 1.4s infinite}
+.panel{border:1px solid #34303a;background:linear-gradient(145deg,#111219ed,#0a0b10f2);padding:clamp(22px,6vw,42px);box-shadow:0 25px 90px #0009;position:relative;overflow:hidden}
+.panel:after{content:"";position:absolute;inset:0;border:1px solid #ff334d22;pointer-events:none}
+.kicker{color:var(--red);font:700 12px ui-monospace,monospace;letter-spacing:.2em}
+h1{font-size:clamp(42px,11vw,76px);line-height:.95;letter-spacing:-.065em;margin:16px 0 18px;text-shadow:3px 0 #ff334d55,-3px 0 #42d8ff33}
+h2{font-size:clamp(25px,6vw,38px);line-height:1.08;margin:10px 0 16px}
+p{color:#b9bbc5}
+.mono{font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;color:#9ba2ad}
+.warning{border-left:2px solid var(--red);padding:10px 13px;background:#ff334d0d;color:#c9c4ca;font-size:13px;margin:22px 0}
+label{display:block;font-size:12px;color:#aeb2bd;margin:22px 0 7px}
+input{width:100%;border:1px solid #44414a;background:#08090e;color:#fff;padding:15px 14px;font:inherit;outline:none;border-radius:2px}
+input:focus{border-color:var(--red);box-shadow:0 0 0 3px #ff334d20}
+button{border:0;background:var(--red);color:#fff;padding:15px 20px;font:800 13px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;width:100%;margin-top:14px;box-shadow:0 8px 28px #ff334d22}
+button:active{transform:translateY(1px)}
+button.secondary{background:#20212a;color:#d7d8df;box-shadow:none;border:1px solid #3c3d47}
+.hidden{display:none!important}
+.progress{height:5px;background:#252630;margin:20px 0 14px;overflow:hidden}
+.bar{height:100%;width:0;background:linear-gradient(90deg,#ff334d,#ff9a67);transition:width .2s}
+.log{height:190px;overflow:hidden;border:1px solid #292a33;background:#07080c;padding:13px;margin-top:18px}
+.log div{font:12px/1.8 ui-monospace,monospace;color:#8e9aa5}
+.log .hot{color:#ff6676}
+.result{font-size:clamp(27px,7vw,42px);font-weight:900;line-height:1.05;margin:20px 0;color:#fff}
+.stamp{display:inline-block;border:1px solid #ff334d;color:#ff6577;padding:5px 9px;font:700 10px ui-monospace,monospace;letter-spacing:.15em;transform:rotate(-2deg)}
+footer{text-align:center;color:#5d626d;font:10px ui-monospace,monospace;letter-spacing:.12em;margin-top:24px}
+.glitch{animation:glitch .18s steps(2) 3}
+@keyframes pulse{50%{opacity:.25}}
+@keyframes glitch{0%{transform:translate(0)}25%{transform:translate(3px,-1px)}50%{transform:translate(-2px,1px)}75%{transform:translate(1px,2px)}100%{transform:translate(0)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+ <div class="top"><span><i class="dot"></i>UNKNOWN PROCESS</span><span>BUILD 04.04 // RU</span></div>
+ <section class="panel" id="intro">
+  <div class="kicker">ВХОДЯЩИЙ СИГНАЛ / 00:00:01</div>
+  <h1>СИГНАЛ<br>404</h1>
+  <p>На этом устройстве обнаружен неизвестный процесс. Источник сигнала не определён.</p>
+  <div class="warning">Необычная активность. Проверка добровольная. Никаких данных из вашей переписки сайт не получает.</div>
+  <label for="nickname">КАК К ТЕБЕ ОБРАЩАТЬСЯ?</label>
+  <input id="nickname" maxlength="20" autocomplete="off" placeholder="Введи имя или ник">
+  <button id="start">ЗАПУСТИТЬ ПРОВЕРКУ</button>
+ </section>
+ <section class="panel hidden" id="scan" aria-live="polite">
+  <div class="kicker">ИДЁТ ДИАГНОСТИКА</div><h2 id="scanTitle">Проверка сигнала</h2>
+  <div class="mono" id="percent">0%</div><div class="progress"><div class="bar" id="bar"></div></div>
+  <div class="log" id="log"></div>
+  <button class="secondary hidden" id="skip">ПРОДОЛЖИТЬ</button>
+ </section>
+ <section class="panel hidden" id="result">
+  <div class="stamp">ОТЧЁТ СФОРМИРОВАН</div>
+  <div class="kicker" style="margin-top:22px">ОБЪЕКТ: <span id="who"></span></div>
+  <div class="result" id="rank"></div>
+  <p id="desc"></p>
+  <div class="warning" id="reveal">Спокойно. Это шуточный хоррор-квест. Сайт не сканировал телефон, не видел участников беседы и ничего никуда не отправлял.</div>
+  <button id="share">ОТПРАВИТЬ РЕЗУЛЬТАТ В VK</button>
+  <button class="secondary" id="again">ПРОВЕРИТЬ ЕЩЁ РАЗ</button>
+ </section>
+ <footer>NO CAMERA · NO MICROPHONE · NO CHAT ACCESS<br>FICTIONAL HORROR EXPERIENCE</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const lines=[
+ 'Подключение к неизвестному узлу…',
+ 'Проверка уровня паранойи…',
+ 'Поиск здравого смысла…',
+ 'Обнаружена подозрительная любовь к мемам.',
+ 'Сканирование чувства юмора…',
+ 'Попытка установить контакт…',
+ 'Кто-то здесь явно не спит вовремя.',
+ 'Сопоставление с архивом странных решений…',
+ 'Почти готово. Не оборачивайся.'
+];
+const profiles=[
+ ['ХРАНИТЕЛЬ ХАОСА','Умеет появляться в чате ровно тогда, когда начинается самое интересное. Система рекомендует не давать ему админку.'],
+ ['АГЕНТ НОЧНОГО ОНЛАЙНА','Последний, кто уходит из беседы. Первый, кто пишет «вы спите?».'],
+ ['МАСТЕР НЕПРОЧИТАННЫХ','Видит сообщения. Запоминает. Отвечает через три рабочих дня.'],
+ ['ГЕНЕРАТОР ТРЕВОЖНЫХ МЕМОВ','Даже в полной тишине способен прислать картинку, после которой никто не уснёт.'],
+ ['НЕИЗВЕСТНЫЙ ЭЛЕМЕНТ','Алгоритм не смог определить уровень хаоса. И, честно говоря, не захотел продолжать.']
+];
+let nickname='Гость';
+function show(id){['intro','scan','result'].forEach(x=>$(x).classList.toggle('hidden',x!==id))}
+function addLine(t,hot=false){const d=document.createElement('div');d.textContent='> '+t;if(hot)d.className='hot';$('log').append(d);$('log').scrollTop=$('log').scrollHeight}
+$('start').addEventListener('click',()=>{
+ nickname=$('nickname').value.trim().slice(0,20)||'Гость';$('who').textContent=nickname.toUpperCase();$('log').textContent='';$('bar').style.width='0%';$('percent').textContent='0%';show('scan');
+ let i=0;const timer=setInterval(()=>{if(i>=lines.length){clearInterval(timer);setTimeout(finish,650);return}addLine(lines[i],i===4||i===8);const p=Math.round((i+1)/lines.length*100);$('bar').style.width=p+'%';$('percent').textContent=p+'%';if(i===6){$('scan').classList.add('glitch');setTimeout(()=>$('scan').classList.remove('glitch'),600)}i++},720);
+});
+function finish(){const p=profiles[Math.floor(Math.random()*profiles.length)];$('rank').textContent=p[0];$('desc').textContent=p[1];show('result');}
+$('again').addEventListener('click',()=>show('intro'));
+$('share').addEventListener('click',()=>{
+ const msg='СИГНАЛ 404 определил мой тип: '+$('rank').textContent+'. Проверь себя 👁';
+ const url='https://vk.com/share.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('СИГНАЛ 404')+'&comment='+encodeURIComponent(msg);
+ window.open(url,'_blank','noopener');
+});
+</script>
+</body></html>
