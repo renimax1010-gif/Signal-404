@@ -59,3 +59,14 @@ docker run --restart unless-stopped --env-file .env vk-chaos-bot
 
 ## Приватность
 Бот не хранит историю чата и не пересылает переписку сторонним сервисам. По умолчанию в логах только технические события и ID. Токен нельзя помещать в HTML, клиентский JavaScript или публичные файлы.
+
+
+## AI personality (current build)
+
+The bot uses the OpenAI Responses API for natural, contextual replies. It keeps a short rolling conversation context in RAM per chat (up to 16 entries); context is lost when the process restarts. Message text is sent to the configured AI provider when the bot generates a reply. Make sure participants know an AI bot is present.
+
+Required AI settings:
+- `OPENAI_API_KEY`: a separate OpenAI API key (ChatGPT subscription does not include API usage).
+- `OPENAI_MODEL`: a model ID enabled for your API project.
+
+AI API usage may incur separate charges. Set project spending limits and monitor usage before inviting the bot to a large group.
