@@ -56,8 +56,7 @@ async function generateReply({ apiKey, model, peerId, speaker, message, mode = '
       model,
       instructions: SYSTEM_PROMPT,
       input,
-      max_output_tokens: 180,
-      temperature: 0.9
+      max_output_tokens: 180
     }),
     signal: AbortSignal.timeout(25000)
   });
