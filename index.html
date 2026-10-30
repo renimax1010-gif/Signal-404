@@ -75,20 +75,43 @@ h1{font-size:clamp(34px,9vw,54px);line-height:1.02;text-align:center;color:#ff33
 <footer class="footer"><span>SF-404 // BUILD 03</span><span>FICTIONAL ALERT</span></footer>
 </div>
 <div id="scare" class="hidden" aria-hidden="true">
-<svg viewBox="0 0 600 800" role="img" aria-label="Жуткое стилизованное лицо">
+<svg viewBox="0 0 700 900" role="img" aria-label="Жуткое лицо монстра">
 <defs>
-<radialGradient id="skin"><stop stop-color="#d7c5b7"/><stop offset=".58" stop-color="#71615d"/><stop offset="1" stop-color="#151116"/></radialGradient>
-<radialGradient id="eye"><stop stop-color="#fff"/><stop offset=".15" stop-color="#ff1c2f"/><stop offset=".5" stop-color="#69000c"/><stop offset="1" stop-color="#080609"/></radialGradient>
-<filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="8"/><feDisplacementMap in="SourceGraphic" scale="13"/></filter>
+ <radialGradient id="void"><stop stop-color="#252027"/><stop offset=".72" stop-color="#080609"/><stop offset="1" stop-color="#000"/></radialGradient>
+ <radialGradient id="flesh" cx="48%" cy="38%" r="65%"><stop stop-color="#b8a39a"/><stop offset=".35" stop-color="#655052"/><stop offset=".72" stop-color="#24151c"/><stop offset="1" stop-color="#050407"/></radialGradient>
+ <radialGradient id="socket"><stop stop-color="#000"/><stop offset=".7" stop-color="#030204"/><stop offset="1" stop-color="#4b1822"/></radialGradient>
+ <radialGradient id="iris"><stop stop-color="#fff4e8"/><stop offset=".12" stop-color="#ff3348"/><stop offset=".4" stop-color="#a00018"/><stop offset="1" stop-color="#050104"/></radialGradient>
+ <linearGradient id="teeth" x2="0" y2="1"><stop stop-color="#fff2dc"/><stop offset="1" stop-color="#75635d"/></linearGradient>
+ <filter id="distort"><feTurbulence type="fractalNoise" baseFrequency=".025" numOctaves="4" seed="17"/><feDisplacementMap in="SourceGraphic" scale="19"/></filter>
+ <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
 </defs>
-<rect width="600" height="800" fill="#030304"/>
-<path d="M95 800 Q65 570 112 300 Q145 72 300 40 Q455 72 488 300 Q535 570 505 800Z" fill="url(#skin)" filter="url(#rough)"/>
-<path d="M112 310 Q195 205 275 305 Q210 370 128 350Z" fill="#08070a"/><path d="M325 305 Q405 205 488 310 L472 350 Q390 370 325 305Z" fill="#08070a"/>
-<ellipse cx="204" cy="321" rx="49" ry="31" fill="url(#eye)"/><ellipse cx="399" cy="321" rx="49" ry="31" fill="url(#eye)"/>
-<path d="M300 330 L260 485 Q300 510 340 485Z" fill="#30252a"/>
-<path d="M190 575 Q300 510 410 575 Q400 710 300 720 Q200 710 190 575Z" fill="#080609"/>
-<path d="M210 580 L390 580 M220 612 L380 612 M235 646 L365 646" stroke="#e4d8d0" stroke-width="13" stroke-linecap="round"/>
-<path d="M100 260 Q160 80 300 100 Q440 80 500 260" fill="none" stroke="#100c12" stroke-width="32"/>
+<rect width="700" height="900" fill="#000"/>
+<ellipse cx="350" cy="460" rx="310" ry="470" fill="#5b0012" opacity=".42" filter="url(#blur)"/>
+<path d="M75 900 Q25 650 62 360 Q70 95 350 35 Q630 95 638 360 Q675 650 625 900Z" fill="url(#flesh)" filter="url(#distort)"/>
+<!-- sunken temples and torn forehead -->
+<path d="M80 330 Q105 85 350 90 Q595 85 620 330 Q520 225 450 245 Q350 175 250 245 Q170 220 80 330Z" fill="#08060a"/>
+<path d="M130 255 Q205 160 300 240 M400 240 Q495 160 570 255" fill="none" stroke="#160b12" stroke-width="35"/>
+<!-- eye sockets -->
+<path d="M82 390 Q155 260 285 340 Q315 420 270 470 Q160 510 82 390Z" fill="url(#socket)"/>
+<path d="M618 390 Q545 260 415 340 Q385 420 430 470 Q540 510 618 390Z" fill="url(#socket)"/>
+<ellipse cx="207" cy="395" rx="57" ry="76" fill="url(#iris)"/>
+<ellipse cx="493" cy="395" rx="57" ry="76" fill="url(#iris)"/>
+<ellipse cx="207" cy="395" rx="12" ry="48" fill="#050205"/>
+<ellipse cx="493" cy="395" rx="12" ry="48" fill="#050205"/>
+<circle cx="188" cy="368" r="12" fill="white" opacity=".8"/><circle cx="474" cy="368" r="12" fill="white" opacity=".8"/>
+<path d="M80 355 Q175 270 290 340 M620 355 Q525 270 410 340" fill="none" stroke="#050307" stroke-width="35"/>
+<!-- nose and cheek hollows -->
+<path d="M350 385 Q315 490 280 555 Q350 590 420 555 Q385 490 350 385Z" fill="#24151b"/>
+<path d="M100 510 Q185 455 280 535 L255 635 Q150 625 100 510Z M600 510 Q515 455 420 535 L445 635 Q550 625 600 510Z" fill="#160d13" opacity=".9"/>
+<!-- impossible wide mouth -->
+<path d="M105 610 Q350 500 595 610 Q570 835 350 850 Q130 835 105 610Z" fill="#020103" stroke="#21050d" stroke-width="25"/>
+<path d="M132 615 Q350 555 568 615 Q525 675 350 680 Q175 675 132 615Z" fill="#390510"/>
+<path d="M145 620 L190 620 L205 700 L170 690Z M205 600 L250 592 L260 690 L220 690Z M270 590 L315 585 L320 690 L280 690Z M340 585 L380 585 L390 690 L350 690Z M405 590 L450 600 L430 690 L395 690Z M470 605 L515 620 L480 690 L445 690Z" fill="url(#teeth)" stroke="#3b2022" stroke-width="5"/>
+<path d="M160 755 L205 735 L230 665 L250 745 L280 760 L310 675 L335 770 L365 770 L390 675 L420 755 L455 745 L480 665 L500 735 L540 755" fill="#bca69b" stroke="#271116" stroke-width="8"/>
+<path d="M120 330 Q145 520 90 690 M580 330 Q555 520 610 690" stroke="#8c1b2b" stroke-width="12" opacity=".7" fill="none"/>
+<!-- cracks, veins, grime -->
+<g fill="none" stroke="#16070d" stroke-width="9" opacity=".9"><path d="M300 115 L275 190 L300 225 L270 275 M410 125 L430 190 L405 230 L435 280 M150 480 L185 525 L165 565 M550 480 L515 525 L535 565"/><path d="M110 280 L145 310 L120 355 M590 280 L555 310 L580 355" stroke="#8d1729" stroke-width="5"/></g>
+<g fill="#d5b9aa" opacity=".5"><circle cx="130" cy="550" r="5"/><circle cx="570" cy="550" r="4"/><circle cx="300" cy="300" r="4"/><circle cx="410" cy="290" r="5"/><circle cx="250" cy="470" r="3"/><circle cx="455" cy="480" r="4"/></g>
 </svg>
 <div class="scare-text">ТЫ ПОПАЛСЯ</div>
 </div>
