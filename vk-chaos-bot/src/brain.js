@@ -1,8 +1,8 @@
 'use strict';
 
 const DIRECT_PATTERNS = [
-  /(?:^|[\\s,!?])(?:ботик?|хаос|ии)(?=$|[\\s,!?])/i,
-  /(?:^|[\\s,])(?:бот|ботик|хаос|ии)[,!?.:]/i
+  /(?:^|[ \t\r\n,!?])(?:ботик?|хаос|ии)(?=$|[ \t\r\n,!?])/i,
+  /(?:^|[ \t,])(?:бот|ботик|хаос|ии)[,!?.:]/i
 ];
 const DIRECT_LINES = [
   'Я здесь. К сожалению, у меня опять есть мнение.',
@@ -38,7 +38,10 @@ function pick(list, random = Math.random) {
 function isDirectAddress(text, groupId) {
   if (!text) return false;
   const normalized = String(text);
-  const mention = groupId && new RegExp('\\\\[(?:club|public)' + Number(groupId) + '\\\\|[^\\\\]]+\\\\]', 'i').test(normalized);
+  const mention = groupId && (
+    normalized.includes('[club' + Number(groupId) + '|') ||
+    normalized.includes('[public' + Number(groupId) + '|')
+  );
   return Boolean(mention || DIRECT_PATTERNS.some((pattern) => pattern.test(normalized)));
 }
 function chooseReply({ direct, random = Math.random }) {
