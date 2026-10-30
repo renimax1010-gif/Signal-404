@@ -29,7 +29,7 @@ function cleanText(value) {
 
 vk.updates.on('message_new', async (context) => {
   try {
-    if (!context.isChat || context.isOutbox || context.isGroup) return;
+    if (!context.isChat || context.isOutbox || context.isFromGroup) return;
     const message = cleanText(context.text);
     if (!message) return;
     const senderId = Number(context.senderId);
